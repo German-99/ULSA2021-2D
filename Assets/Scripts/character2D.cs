@@ -89,8 +89,9 @@ public class character2D : MonoBehaviour
         if(other.CompareTag("Coin"))
         {
             Coin coin = other.GetComponent<Coin>();
+            GameManager.instance.GetScore.AddPoints(coin.Points);
             Destroy(other.gameObject);
-            Debug.Log(coin.Points);
+            //Debug.Log(coin.Points);
         }
     }
 }
